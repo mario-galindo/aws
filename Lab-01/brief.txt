@@ -1,0 +1,7 @@
+Resources to be deployed:
+
+- Default VPC
+- Security Group
+- EC2 Instance
+
+ami-04f2aebe9a95f0968 - Default from data list
