@@ -41,7 +41,7 @@ locals {
 # DATA
 ##############
 
-data "aws_availability_zones" "availabe" {}
+data "aws_availability_zones" "available" {}
 
 ##############
 # RESOURCES
@@ -58,7 +58,7 @@ resource "aws_subnet" "subnet1" {
   cidr_block              = var.subnet1_address_space
   vpc_id                  = aws_vpc.vpc.id
   map_public_ip_on_launch = "true"
-  availability_zone       = data.aws_availability_zones.availabe.name[0]
+  availability_zone       = data.aws_availability_zones.available.names[0]
 }
 
 resource "aws_internet_gateway" "igw" {
