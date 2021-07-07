@@ -66,6 +66,7 @@ resource "aws_internet_gateway" "igw" {
 }
 
 # Routing #
+
 resource "aws_route_table" "rtb" {
   vpc_id = aws_vpc.vpc.id
 
@@ -81,6 +82,7 @@ resource "aws_route_table_association" "rta_subnet1" {
 }
 
 # Security Groups #
+
 resource "aws_security_group" "nginx-sg" {
 
   name        = "nginx_sg"
@@ -104,15 +106,18 @@ resource "aws_security_group" "nginx-sg" {
   egress {
     from_port   = 0
     to_port     = 0
-    protocol    = -1
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+# Instances #
 
 resource "aws_instance" "nginx1" {
 
   ami                    = "ami-04f2aebe9a95f0968"
   instance_type          = "t2.micro"
+  subnet_id              = aws_subnet.subnet1.id
   key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.nginx-sg.id]
 
