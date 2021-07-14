@@ -65,10 +65,8 @@ resource "aws_instance" "nginx" {
   key_name                    = var.key_name
 
   provisioner "remote-exec" {
-    inline = [
-    "echo 'Wait until SSH is ready'",
-    "sudo apt-get update"
-    ]
+  
+    inline = ["echo 'Wait until SSH is ready'"]
 
     connection {
       type        = "ssh"
