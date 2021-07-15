@@ -1,0 +1,12 @@
+Terraform Ansible Integration | AWS
+
+Terraform:
+    - Create Security Group
+    - Create EC2 Instance
+    - Run Ansible Playbook using Local-Exec Provisioners
+
+Ansible:
+    - Update System Packages
+    - Install & Run Nginx Service
+
+https://www.youtube.com/watch?v=QxgJlJgGA0E
