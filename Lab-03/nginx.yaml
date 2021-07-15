@@ -1,5 +1,5 @@
 ---
-  - name: Install Nginx
+  - name: Upgrade system packages and install nginx
     hosts: all
     remote_user: ubuntu
     become: yes
